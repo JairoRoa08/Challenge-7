@@ -33,3 +33,23 @@ const calculateLoyaltyDiscount = (amount, years) => {
 
 calculateLoyaltyDiscount(100, 6);
 calculateLoyaltyDiscount(200, 2);
+
+// Task 4: Parameters and Arguments 
+function calculateShippingCost(weight, location, expedited = false) {
+    let baseCost;
+    if (location === "USA") {
+        baseCost = 5 + (0.5 * weight);
+    } else if (location === "Canada") {
+        baseCost = 10 + (0.7 * weight);
+    } else {
+        console.log("Invalid location");
+        return;
+    }
+    if (expedited) {
+        baseCost += 10;
+    }
+const formattedCost = baseCost.toFixed(2);
+console.log(`Shipping Cost: $${formattedCost}`);
+}
+calculateShippingCost(10, "USA", true); 
+calculateShippingCost(5, "Canada", false);
