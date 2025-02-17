@@ -53,3 +53,12 @@ console.log(`Shipping Cost: $${formattedCost}`);
 }
 calculateShippingCost(10, "USA", true); 
 calculateShippingCost(5, "Canada", false);
+
+// Task 5: Returning Values
+function calculateLoanInterest(principal, rate, years) {
+    const interest = principal * rate * years;
+    const formattedInterest = interest.toFixed(2);
+    console.log(`Total Interest: $${formattedInterest}`);
+}
+calculateLoanInterest(1000, 0.05, 3);
+calculateLoanInterest(5000, 0.07, 5);
