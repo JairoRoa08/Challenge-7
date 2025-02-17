@@ -81,3 +81,18 @@ function createBudgetTracker() {
 let budget = createBudgetTracker();
 budget(300);
 budget(200);
+
+// Task 8: Recursion in Javascript
+function calculateGrowth(years, revenue) {
+    if (years >= 10) {
+        const formattedRevenue = revenue.toFixed(2);
+        console.log(`Projected Revenue: $${formattedRevenue}`);
+        return;
+    }
+    revenue += revenue * 0.05;
+    calculateGrowth(years + 1, revenue);
+}
+
+calculateGrowth(8, 1000); // Expected output: "Projected Revenue: $1102.50"
+calculateGrowth(5, 5000);
+
