@@ -70,3 +70,14 @@ function filterHighValueTransactions(transactions, filterFunction) {
     console.log(highValueTransactions);
 }
 filterHighValueTransactions(transactions, amount => amount > 1000); 
+
+// Task 7: Closures
+function createBudgetTracker() {
+        return function(expense) {
+            balance -= expense;
+            console.log(`Current Balance: -$${Math.abs(balance)}`);
+        };
+    }
+let budget = createBudgetTracker();
+budget(300);
+budget(200);
